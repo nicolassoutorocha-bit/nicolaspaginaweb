@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu blog gourmet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="card">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>Meu blog gourmet</h1>
+            <p>Vou compartilhar receitas, dicas de cozinha e delícias gastronômicas</p>
+        </header>
+
+        <!-- Conteúdo do Post -->
+        <article class="post">
+            <div class="post-header">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2b6cb0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 13.87A8 8 0 0 1 12 4a8 8 0 0 1 6 9.87M6 13.87A4 4 0 0 0 10 18h4a4 4 0 0 0 4-4.13M6 13.87H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-2"/>
+                        <line x1="12" y1="18" x2="12" y2="22"/>
+                        <line x1="8" y1="22" x2="16" y2="22"/>
+                    </svg>
+                </div>
+                <h2>Meu primeiro post</h2>
+            </div>
+
+            <p class="author">Por: Nicolas Gabriel</p>
+
+            <div class="post-image-container">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Prato gourmet" class="post-image">
+            </div>
+
+            <p class="post-text">
+                Boas-vindas ao meu novo blog! Aqui vou compartilhar receitas especiais, segredos culinários e curiosidades do universo da gastronomia.
+            </p>
+
+            <button class="like-btn" id="likeBtn">
+                <span class="heart-icon">❤️</span>
+                <span id="likeCount">0</span>
+            </button>
+        </article>
+    </main>
+
+    <script>
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCount = document.getElementById('likeCount');
+        let count = 0;
+        let liked = false;
+
+        likeBtn.addEventListener('click', () => {
+            if (!liked) {
+                count++;
+                liked = true;
+                likeBtn.classList.add('liked');
+            } else {
+                count--;
+                liked = false;
+                likeBtn.classList.remove('liked');
+            }
+            likeCount.textContent = count;
+        });
+    </script>
+</body>
+</html>
